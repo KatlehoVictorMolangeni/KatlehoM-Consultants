@@ -1,0 +1,118 @@
+/* Teboho.css */
+
+.teboho-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.teboho-message-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    color: rgb(2, 2, 32);
+    animation: popIn 0.5s ease forwards;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.teboho-image {
+    width: 250px;
+    height: 350px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Fade-in and scale animation for text */
+.fade-in-text {
+    opacity: 0;
+    animation: fadeInScale 0.8s ease forwards;
+}
+
+@keyframes fadeInScale {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Balloon styles and animations */
+.balloons {
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.balloon {
+    width: 80px;
+    height: 60px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    animation: floatUp 2.5s ease-in-out forwards;
+}
+
+.balloon1 {
+    background-color: #ff6b6b;
+    animation-delay: 0.2s;
+}
+
+.balloon2 {
+    background-color: #ffb6b9;
+    animation-delay: 0.4s;
+}
+
+.balloon3 {
+    background-color: #ffd36b;
+    animation-delay: 0.8s;
+}
+.balloon4 {
+    background-color: #912626;
+    animation-delay: 1.2s;
+}
+
+.balloon5 {
+    background-color: #547d9e;
+    animation-delay: 1.6s;
+}
+
+.balloon6 {
+    background-color: #dd9f0f;
+    animation-delay: 2.0s;
+}
+
+.balloon7 {
+    background-color: #c0bdb6;
+    animation-delay: 2.4s;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-200px); opacity: 0; }
+}

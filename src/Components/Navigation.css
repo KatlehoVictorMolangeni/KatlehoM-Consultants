@@ -1,0 +1,361 @@
+/* Navigation.css */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navigation {
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: transparent;
+    color: white;
+    font-family: Arial, sans-serif;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 120px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    color: #ddd;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.show {
+    transform: translateX(0);
+}
+
+.sidebar .close-btn {
+    align-self: flex-end;
+    margin: 0 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 2rem 1.5rem;
+}
+
+.sidebar ul li {
+    margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.sidebar ul li a:hover {
+    color: #ddd;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+}
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Main Homepage Section */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(90px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        color: rgb(173, 231, 173); /* Bright orange */
+    }
+    50% {
+        color: #ffffff; /* White */
+    }
+    
+}
+
+.homepage {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+.homepage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('./back.jpeg') no-repeat center center/cover;
+    filter: brightness(0.6) blur(5px); /* Darkens and blurs the background image */
+    z-index: -1;
+}
+
+.homepage h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    animation: fadeInUp 3s ease forwards, pulse 3s infinite ease-in-out;
+    opacity: 0; /* Start hidden */
+}
+
+.homepage p {
+    margin-top: 1rem;
+    font-size: 2rem;
+    max-width: 800px;
+    animation: fadeInUp 2s ease forwards;
+    opacity: 0; /* Start hidden */
+    
+}
+
+.homepage .btn-group {
+    margin-top: 2rem;
+    animation: fadeInUp 2s ease forwards;
+    opacity: 0; /* Start hidden */
+}
+
+.homepage .btn-group a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 0.7rem 2rem;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.homepage .btn-group a:hover {
+    background: white;
+    color: black;
+}
+
+.menu-btn {
+    background-color: rgb(79, 133, 79); /* Green color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-btn:hover {
+    background-color: rgb(87, 192, 87); /* Darker green on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.menu-btn:active {
+    transform: scale(0.98); /* Slightly shrink on click */
+}
+
+/* Overlay background for the message box */
+.message-box-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Styling for the message box */
+.message-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 80%;
+}
+
+.message-box p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.close-btn {
+    background: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.close-btn:hover {
+    background: #555;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 1.2rem 1.5rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .homepage h1 {
+        font-size: 4rem;
+    }
+
+    .homepage p {
+        font-size: 1.8rem;
+        max-width: 700px;
+    }
+
+    .homepage .btn-group a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1.2rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .homepage {
+        padding: 0 1rem;
+    }
+
+    .homepage h1 {
+        font-size: 3rem;
+    }
+
+    .homepage p {
+        font-size: 1.6rem;
+        max-width: 600px;
+    }
+
+    .homepage .btn-group a {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links for mobile */
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .homepage {
+        padding: 0 1rem;
+    }
+
+    .homepage h1 {
+        font-size: 2.5rem;
+    }
+
+    .homepage p {
+        font-size: 1.4rem;
+        max-width: 100%;
+    }
+
+    .homepage .btn-group a {
+        font-size: 0.8rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+    /* Show the menu button on mobile */
+    .menu-btn {
+        display: block;
+    }
+}

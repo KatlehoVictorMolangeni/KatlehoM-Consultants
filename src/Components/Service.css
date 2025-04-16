@@ -1,0 +1,124 @@
+.services-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.services-section h4 {
+    color: #4a90e2;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+    letter-spacing: 1.2px;
+}
+
+.services-section h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-card .icon {
+    font-size: 36px;
+    color: #4a90e2;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .services-section h1 {
+        font-size: 32px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust column size */
+    }
+}
+
+@media (max-width: 992px) {
+    .services-section h1 {
+        font-size: 28px;
+    }
+
+    .service-card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 30px 15px;
+    }
+
+    .services-section h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .service-card {
+        padding: 12px;
+    }
+
+    .service-card h3 {
+        font-size: 18px;
+    }
+
+    .service-card p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-section h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 column per row */
+    }
+
+    .service-card {
+        padding: 10px;
+    }
+
+    .service-card h3 {
+        font-size: 16px;
+    }
+
+    .service-card p {
+        font-size: 12px;
+    }
+}
